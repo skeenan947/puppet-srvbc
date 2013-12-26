@@ -1,0 +1,40 @@
+{
+  "name": "puppetlabs-horizon",
+  "summary": "Puppet Labs Horizon Module",
+  "version": "3.0.0-rc1",
+  "source": "https://github.com/stackforge/puppet-horizon",
+  "license": "Apache License 2.0",
+  "dependencies": [
+    {
+      "version_requirement": ">= 2.0.2 <3.0.0",
+      "name": "saz/memcached"
+    },
+    {
+      "version_requirement": ">= 0.4.0 <1.0.0",
+      "name": "puppetlabs/apache"
+    },
+    {
+      "version_requirement": ">= 2.5.0",
+      "name": "puppetlabs/stdlib"
+    }
+  ],
+  "checksums": {
+    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+    "LICENSE": "b3f8a01d8699078d82e8c3c992307517",
+    "spec/classes/horizon_init_spec.rb": "24abf40875cf6a0b841c301ef4d03724",
+    "Modulefile": "de85617ce3aece81508e063e05655243",
+    "manifests/init.pp": "69d740abc9f422bf4a7d615a75a9c94e",
+    "manifests/params.pp": "88198148d963199d29e282e5b83208e8",
+    "templates/local_settings.py.erb": "442521c54c8824dde5c361a971b0cccc",
+    "README.md": "ec2266c770405af9adf1b2f6fcd7d458",
+    "Gemfile": "a01e3f0d8ee43217838d92197f32f28f",
+    "spec/fixtures/override_local_settings.py.erb": "285e5a6f40cd359eafef98f2afe8a73c",
+    "Rakefile": "2ca4ff31c946a19edd44348fbfdc2aab"
+  },
+  "author": "Puppet Labs",
+  "project_page": "https://launchpad.net/puppet-openstack",
+  "description": "Puppet module to install and configure the OpenStack Horizone dashboard",
+  "types": [
+
+  ]
+}
