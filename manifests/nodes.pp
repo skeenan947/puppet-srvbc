@@ -30,7 +30,7 @@ node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'ubuntubase' {
    public_interface       => br100,
    private_interface      => br100,
    bridge_interface       => br100,
-   internal_address       => '192.168.1.210',
+   internal_address       => '192.168.1.200',
    mysql_root_password    => 'sRv4gYf#',
    allowed_hosts          => ['127.0.0.%', '192.168.1.%'],
    admin_email            => 'skeenan@gmail.com',
