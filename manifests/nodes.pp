@@ -2,7 +2,9 @@
 
 node base {
    include ssh
-   include ntp
+    class { 'ntp':
+    servers => [ 'tick.ucla.edu', 'nist1.symmetricom.com' ],
+    }
 }
 
 node ubuntubase inherits base {
@@ -27,9 +29,9 @@ node 'puppet', 'puppet.ops.srvbc.net' inherits 'ubuntubase' {
 node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'ubuntubase' {
  class { 'openstack::all':
    public_address         => '192.168.1.200',
-   public_interface       => br100,
-   private_interface      => br100,
-   bridge_interface       => br100,
+   public_interface       => p4p1,
+   private_interface      => eth0,
+   bridge_interface       => p4p1,
    internal_address       => '192.168.1.200',
    mysql_root_password    => 'sRv4gYf#',
    allowed_hosts          => ['127.0.0.%', '192.168.1.%'],
@@ -48,10 +50,13 @@ node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'ubuntubase' {
    neutron_user_password  => 'changeme',
    neutron_db_password    => 'changeme',
    metadata_shared_secret => 'shared_md_secret',
-   fixed_range            => '10.1.1.0/24',
+   fixed_range            => '192.168.2.0/24',
    multi_host             => true,
    enable_ovs_agent       => true,
  }
 
    include openstack::all
 }
+
+node 'ops*' inherits 'ubuntubase' {
+   }

@@ -1,0 +1,49 @@
+{
+  "name": "lex-dnsmasq",
+  "version": "2.2.0",
+  "source": "git://github.com/rlex/puppet-dnsmasq.git",
+  "author": "Lex Rivera <me@lex.io>",
+  "license": "Creative Commons Attribution 3.0 Unported License",
+  "summary": "Puppet Dnsmasq management module",
+  "description": "A module to deploy and manage the dnsmasq DNS/DHCP/TFTP server",
+  "project_page": "https://github.com/rlex/puppet-dnsmasq",
+  "dependencies": [
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Changelog": "d957150d79c38db159abe741a04f4852",
+    "Modulefile": "04092ff750715e251b9121c143407c6a",
+    "README.md": "ffb7d2866c7ee151070892e0594ae799",
+    "manifests/address.pp": "310344208058d234133c40dc24940f82",
+    "manifests/cname.pp": "f607b7c62bf18832b3374fee092496aa",
+    "manifests/dhcp.pp": "b1a5ac0851fedd4ce76d05b8bd9fd24b",
+    "manifests/dhcpboot.pp": "0313fd33e4c2a105e7813f0d5a218c89",
+    "manifests/dhcpoption.pp": "936ff052a06c19a865173b4329805662",
+    "manifests/dhcpstatic.pp": "8094523e0b08d873e439fee435628e6b",
+    "manifests/domain.pp": "bfeab9876db59d93de61b7d605d9d422",
+    "manifests/init.pp": "6125629477cda31e828d381106c89421",
+    "manifests/mx.pp": "3fc021a6a85b29d3428b3c11d6ad0c5c",
+    "manifests/params.pp": "e9e649e3a429690d7b2b301a2166c59d",
+    "manifests/ptr.pp": "ce3e2c774f6a62312682ce1b0878d4d9",
+    "manifests/srv.pp": "04d240a7a5c993cd47f939b6c9ff8a6e",
+    "manifests/txt.pp": "c0ccced0787d0e6ce42e57dd8236336d",
+    "templates/address.erb": "3a01bc14aeff8698bb436104644ab135",
+    "templates/cname.erb": "d5f9d11d5bba9fd32692f5c72c2fe29d",
+    "templates/dhcp.erb": "e23545d30606a51ee9b016c4f5f372e6",
+    "templates/dhcpboot.erb": "bcf27e8a2bdaa88df68116a5d5b0fa05",
+    "templates/dhcpoption.erb": "ecc4a9113d9ff553bfaa9cfbcb66241f",
+    "templates/dhcpstatic.erb": "15682cfd9706948aceb76b76479eb2b6",
+    "templates/dnsmasq.conf.erb": "c8bfa2630e09d3d07cb4784a11062c9c",
+    "templates/domain.erb": "381ba48b7e161d4286c65b708f79df36",
+    "templates/mx.erb": "ea5f74857695fd8c432532410344eae6",
+    "templates/ptr.erb": "082e7775df6ec64efc5f282d72b03764",
+    "templates/srv.erb": "44b57fdd917dca82743e559e27491b0a",
+    "templates/txt.erb": "b3b9f5f7aafb118719abf808f909227c"
+  }
+}

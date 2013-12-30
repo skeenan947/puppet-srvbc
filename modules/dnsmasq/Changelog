@@ -1,0 +1,59 @@
+### 2.2.0
+
+* [FEATURE] PTR records
+* [FEATURE] TXT records
+* [BUGFIX] proper variable calling in all templates
+* [BUGFIX] fedora support fix
+
+
+### 2.1.0
+
+* [FEATURE] "cname" (sorta) records support
+* [FEATURE] srv records support
+* [FEATURE] mx records support
+* [MISC] cosmetic changes in header of dnsmasq.conf, no more ugly newlines
+* [BUGFIX] concat ordering fixed
+
+### 2.0.0-rc1
+(Please note: this release brings loads of changes and can break existing configs)
+
+* [FEATURE] array can be used in 'interface =>' to specify several listen interfaces
+* [FEATURE] listen_address added to specify IP instead of interfaces
+* [FEATURE] array can be used in 'listen_address =>' to specify several listening IPs
+* [FEATURE] dnsmasq::dhcpboot added to customize PXE booting for specific hosts/subnets
+* [FEATURE] interface, listen_address and domain is now optional, undefined by default
+* [FEATURE] dnsmasq::domain added to specify domain name for different subnets
+* [FEATURE] tag and set options added to dnsmasq::dhcp and dnsmasq::dhcpboot 
+* [BUGFIX] several DHCP instances can be added now
+* [BUGFIX] added forgotten concat dependency
+* [BUGFIX] conf.d dir can now be used with system default
+* [BUGFIX] Default dnsmasq conf.d directory can now be used on RHEL-based distros
+
+### 1.1.2
+
+* [FEATURE] DHCP server now supports netmask
+* [API] dnsmasq::dhcp now requires netmask, check readme 
+
+### 1.1.1
+
+* [FEATURE] Add resolv-file option
+* [FEATURE] Add cache-size option
+* [FEATURE] Add no-hosts option
+* [FEATURE] Add dnsmasq.d config folder support
+* [BUG] Wrong name in puppetforge modulefile
+
+### 1.1.0
+
+* [API] dnsmasq::dhcpstatic now uses $ip instead of $macip, update your configs
+* [MISC] Fixed all style-errors in manifests
+* [MISC] More adequate templates names
+* [MISC] Warning about puppet management on top of dnsmasq.conf
+* [FEATURE] Error message about unsupported systems
+
+### 1.0.1
+
+* [BUG] Hotfix for documentation, wrong class name in ::staticdhcp
+
+### 1.0.0
+
+* [INFO] Initial release
