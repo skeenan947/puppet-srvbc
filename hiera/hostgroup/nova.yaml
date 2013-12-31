@@ -1,0 +1,26 @@
+classes:  ["openstack::all"]
+openstack::all::public_address: "192.168.1.200"
+openstack::all::public_interface: "p4p1"
+openstack::all::private_interface: "p4p1"
+openstack::all::bridge_interface: "p4p1"
+openstack::all::internal_address: "192.168.1.200"
+openstack::all::mysql_root_password: "sRv4gYf#"
+openstack::all::allowed_hosts: ["127.0.0.%", "192.168.1.%"]
+openstack::all::admin_email: "skeenan@gmail.com"
+openstack::all::admin_password: "netday"
+openstack::all::keystone_db_password: "changeme"
+openstack::all::keystone_admin_token: "12345"
+openstack::all::glance_db_password: "changeme"
+openstack::all::glance_user_password: "changeme"
+openstack::all::nova_db_password: "changeme"
+openstack::all::nova_user_password: "changeme"
+openstack::all::secret_key: "dummy_secret_key"
+openstack::all::cinder_user_password: "changeme"
+openstack::all::cinder_db_password: "changeme"
+openstack::all::rabbit_password: "changeme"
+openstack::all::neutron_user_password: "changeme"
+openstack::all::neutron_db_password: "changeme"
+openstack::all::metadata_shared_secret: "shared_md_secret"
+openstack::all::fixed_range: "192.168.2.0/24"
+openstack::all::multi_host: true
+openstack::all::enable_ovs_agent: true

@@ -1,0 +1,5 @@
+classes: ["ntp", "ssh", "apt"]
+ntp::restrict: true
+ntp::autoupdate: true
+ntp::enable: true
+ntp::servers: ['tick.ucla.edu', 'nist1.symmetricom.com']

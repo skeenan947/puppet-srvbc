@@ -1,17 +1,17 @@
 # /etc/puppet/manifests/nodes.pp
 
-node base {
+node srvbcbase {
    include ssh
     class { 'ntp':
     servers => [ 'tick.ucla.edu', 'nist1.symmetricom.com' ],
     }
 }
 
-node ubuntubase inherits base {
+node srvbcubuntubase inherits srvbcbase {
    include apt
 }
 
-node 'puppet', 'puppet.ops.srvbc.net' inherits 'ubuntubase' {
+node 'puppet', 'puppet.ops.srvbc.net' inherits 'srvbcubuntubase' {
    class {'dashboard':
      dashboard_ensure       => 'present',
      dashboard_user         => 'www-data',
@@ -26,11 +26,11 @@ node 'puppet', 'puppet.ops.srvbc.net' inherits 'ubuntubase' {
    }
    include dashboard
 }
-node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'ubuntubase' {
+node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'srvbcubuntubase' {
  class { 'openstack::all':
    public_address         => '192.168.1.200',
    public_interface       => p4p1,
-   private_interface      => eth0,
+   private_interface      => p4p1,
    bridge_interface       => p4p1,
    internal_address       => '192.168.1.200',
    mysql_root_password    => 'sRv4gYf#',
@@ -58,5 +58,5 @@ node 'srvbc01', 'srvbc01.ops.srvbc.net' inherits 'ubuntubase' {
    include openstack::all
 }
 
-node 'ops*' inherits 'ubuntubase' {
+node /ops.*\.ops\.srvbc\.net$/ inherits 'srvbcubuntubase' {
    }
