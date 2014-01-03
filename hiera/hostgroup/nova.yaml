@@ -1,4 +1,4 @@
-classes:  ["openstack::all"]
+classes:  ["openstack::all", "nfs"]
 openstack::all::public_address: "192.168.1.200"
 openstack::all::public_interface: "p4p1"
 openstack::all::private_interface: "p4p1"
@@ -24,3 +24,5 @@ openstack::all::metadata_shared_secret: "shared_md_secret"
 openstack::all::fixed_range: "192.168.2.0/24"
 openstack::all::multi_host: true
 openstack::all::enable_ovs_agent: true
+nfs::mode: "server"
+nfs::source: "puppet:///modules/nfs/exports-nova"

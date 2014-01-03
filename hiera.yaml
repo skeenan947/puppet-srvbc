@@ -1,12 +1,9 @@
 ---
 :backends:
   - yaml
-  - json
 :yaml:
   :datadir: /etc/puppet/hiera
-:json:
-  :datadir: /etc/puppet/hiera
 :hierarchy:
-  - "node/%{::certname}"
-  - "hostgroup/%{hostgroup}"
+  - node/%{clientcert}
+  - hostgroup/%{hostgroup}
   - common

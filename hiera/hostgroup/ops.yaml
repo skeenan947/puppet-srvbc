@@ -1,0 +1,27 @@
+classes: ["ldap::server::master", "dnsmasq", "role::dnsmasq" ]
+ldap::server::master::suffix: 'dc=srvbc,dc=net'
+ldap::server::master::rootpw: '{SHA}9ZkGTLrx7QqhH0Krl+A13HaqlWc='
+ldap::server::master::rootdn: 'cn=admin,dc=srvbc,dc=net'
+dnsmasq::interface: 'eth0'
+dnsmasq::domain: 'srvbc.net'
+dnsmasq::expand_hosts: true
+dnsmasq::enable_tftp: true
+dnsmasq::dhcp:
+ wifi0:
+   dhcp_start: '10.11.0.100'
+   dhcp_end: '10.11.1.240'
+   netmask: '255.255.254.0'
+   lease_time: '24h'
+ net0:
+   dhcp_start: '10.10.0.100'
+   dhcp_end: '10.10.1.240'
+   netmask: '255.255.254.0'
+   lease_time: '24h'
+ servers:
+   dhcp_start: '10.100.0.100'
+   dhcp_end: '10.100.0.240'
+   netmask: '255.255.255.0'
+   lease_time: '24h'
+dnsmasq::domains:
+ client.srvbc.net:
+   subnet: '10.200.0.0/22'

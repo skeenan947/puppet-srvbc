@@ -36,6 +36,10 @@ class dnsmasq (
     provider => $::provider,
   }
 
+  file { $dnsmasq_confdir:
+    ensure => 'directory',
+  }
+
   service { $dnsmasq_service:
     ensure    => running,
     name      => $dnsmasq_service,
@@ -44,7 +48,7 @@ class dnsmasq (
     require   => Package[$dnsmasq_package],
   }
 
-  file { $dnsmasq_confdir:
+  file { $tftp_root:
     ensure => 'directory',
   }
 

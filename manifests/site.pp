@@ -1,5 +1,5 @@
 # /etc/puppet/manifests/site.pp
 
-$hostgroup = regsubst($hostname, '-*\d+$', '')
+$hostgroup = regsubst($::clientcert, '-.*$', '')
 hiera_include('classes')
 #import "nodes"
